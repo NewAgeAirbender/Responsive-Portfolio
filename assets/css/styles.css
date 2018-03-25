@@ -111,7 +111,7 @@ footer {
     width: 100%;
     max-width: 960px;
     padding: 30px;
-    margin: 0 0 40px;
+    margin: 0 0 10px;
     background: #fff;
     border: 1px solid #ddd;
 }
@@ -120,7 +120,7 @@ footer {
         width: 100%;
         max-width: 960px;
         padding: 30px;
-        margin: 0 0 40px;
+        margin: 20px 0 40px;
         background: #fff;
         border: 1px solid #ddd;
 }
@@ -200,6 +200,12 @@ input[type="submit"]:hover {
     color: #ffffff;
     cursor: pointer;
 }
+@media screen and (max-width: 980px) {
+    .sidebar {
+    float: left;
+    width: 250px;
+}
+}
 
 @media screen and (max-width: 640px) {
     .wrapper {
@@ -210,6 +216,8 @@ input[type="submit"]:hover {
         width: 100%;
         display: block;
     }
+
+    /*need to fix the nav so centered without scroll*/
     .nav {
         display: inline-block;
         margin: 10px 170px;
@@ -217,11 +225,12 @@ input[type="submit"]:hover {
     .mHeading {
         position: static;
     }
-    .main-section {
-        max-width: 580px;
+    /*sidebar issues*/
+    .main-section, .sidebar {
+        width: 580px;
         margin: 0px 20px 20px 20px;
     }
-    #main-content {
+    .main-content {
         padding-top: 20px;
     }
     .face {
@@ -241,11 +250,11 @@ input[type="submit"]:hover {
         position: static;
         margin: 0px;
     }
-    #main-content {
+    .main-content {
         padding-top: 20px;
     }
-    .main-section {
-        max-width: 700px;
+    .main-section, .sidebar {
+        width: 700px;
         margin: 0px 20px 20px 20px;
     }
     .specialNameHeader {
@@ -261,6 +270,7 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 980px){
+    /*fix the floats on the main content and sidebar*/
     .wrapper {
         width: 100%;
     }
@@ -268,12 +278,14 @@ input[type="submit"]:hover {
         position: static;
         margin: 0px;
     }
-    #main-content {
+    .main-content {
         padding-top: 30px;
     }
     .main-section {
-        max-width: 500px;
-        margin: 0px 40px 20px 40px;
+        max-width: 450px;
+        margin: 0px 0px 20px 40px;
+        display: inline-block;
+        clear: both;
     }
     .specialNameHeader {
         margin: 0px 40px;
